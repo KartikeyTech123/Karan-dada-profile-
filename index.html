@@ -3,7 +3,10 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Karan Balmiki - Portfolio</title>
+    <title>Karan Balmiki - Digital Marketing & HR Specialist</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@700;800;900&family=Montserrat:wght@800;900&family=Playfair+Display:wght@700;800;900&family=Space+Grotesk:wght@700&display=swap" rel="stylesheet">
     <style>
         * {
             margin: 0;
@@ -59,14 +62,35 @@
 
         .nav-brand {
             font-size: 1.8rem;
-            font-weight: 800;
-            background: linear-gradient(135deg, var(--primary) 0%, var(--secondary) 100%);
+            font-weight: 900;
+            background: linear-gradient(135deg, var(--primary) 0%, var(--secondary) 50%, var(--accent) 100%);
             -webkit-background-clip: text;
             -webkit-text-fill-color: transparent;
             background-clip: text;
             letter-spacing: 2px;
             cursor: pointer;
             transition: all 0.3s ease;
+            font-family: 'Playfair Display', serif;
+            text-transform: uppercase;
+            font-style: italic;
+            display: flex;
+            flex-direction: column;
+            align-items: flex-start;
+            line-height: 1.2;
+        }
+
+        .nav-brand-title {
+            font-size: 0.5em;
+            font-weight: 600;
+            background: linear-gradient(135deg, var(--accent) 0%, var(--primary) 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            text-transform: capitalize;
+            font-style: normal;
+            font-family: 'Poppins', sans-serif;
+            letter-spacing: 1px;
+            margin-top: 2px;
         }
 
         .nav-brand:hover {
@@ -198,180 +222,93 @@
             -webkit-background-clip: text;
             -webkit-text-fill-color: transparent;
             background-clip: text;
-            animation: fadeInUp 1s ease-out 0.2s both;
         }
 
-        .hero h2 {
-            font-size: 2rem;
-            font-weight: 400;
-            color: var(--text-lighter);
-            margin-bottom: 2rem;
-            animation: fadeInUp 1s ease-out 0.4s both;
-        }
-
-        .hero-description {
-            font-size: 1.1rem;
+        .hero p {
+            font-size: 1.3rem;
             color: var(--text-light);
-            max-width: 500px;
-            line-height: 1.8;
             margin-bottom: 2rem;
-            animation: fadeInUp 1s ease-out 0.6s both;
+            line-height: 1.8;
         }
 
         .hero-buttons {
             display: flex;
-            gap: 1.5rem;
-            animation: fadeInUp 1s ease-out 0.8s both;
+            gap: 1rem;
             flex-wrap: wrap;
         }
 
         .btn {
-            padding: 1rem 2rem;
-            font-size: 1rem;
+            padding: 1rem 2.5rem;
             border: none;
             border-radius: 50px;
-            cursor: pointer;
+            font-size: 1rem;
             font-weight: 600;
-            transition: all 0.3s ease;
+            cursor: pointer;
+            transition: all 0.4s ease;
             text-decoration: none;
             display: inline-block;
+            position: relative;
+            overflow: hidden;
         }
 
         .btn-primary {
-            background: linear-gradient(135deg, var(--primary) 0%, var(--secondary) 100%);
+            background: linear-gradient(135deg, var(--primary), var(--secondary));
             color: #fff;
-            box-shadow: 0 8px 24px rgba(102, 126, 234, 0.4);
+            box-shadow: 0 8px 20px rgba(102, 126, 234, 0.3);
         }
 
         .btn-primary:hover {
             transform: translateY(-3px);
-            box-shadow: 0 12px 32px rgba(102, 126, 234, 0.6);
+            box-shadow: 0 12px 30px rgba(102, 126, 234, 0.5);
         }
 
         .btn-secondary {
             background: transparent;
-            color: var(--primary);
+            color: #fff;
             border: 2px solid var(--primary);
         }
 
         .btn-secondary:hover {
             background: var(--primary);
-            color: #fff;
             transform: translateY(-3px);
         }
 
-        .contact-info {
-            display: flex;
-            gap: 2rem;
-            margin-top: 3rem;
-            animation: fadeInUp 1s ease-out 1s both;
-            flex-wrap: wrap;
-        }
-
-        .contact-item {
-            display: flex;
-            align-items: center;
-            gap: 0.8rem;
-        }
-
-        .contact-item-icon {
-            width: 45px;
-            height: 45px;
-            border-radius: 50%;
-            background: rgba(102, 126, 234, 0.2);
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            color: var(--primary);
-            font-size: 1.2rem;
-        }
-
-        .contact-item-text {
-            display: flex;
-            flex-direction: column;
-        }
-
-        .contact-item-text small {
-            color: var(--text-lighter);
-            font-size: 0.9rem;
-        }
-
-        .contact-item-text p {
-            color: #fff;
-            font-weight: 500;
-        }
-
-        /* ===== HERO IMAGE ===== */
-        .hero-image {
+        .image-wrapper {
             flex: 1;
             display: flex;
             justify-content: center;
             align-items: center;
             z-index: 10;
-            animation: fadeInRight 1s ease-out;
-        }
-
-        @keyframes fadeInRight {
-            from {
-                opacity: 0;
-                transform: translateX(50px);
-            }
-            to {
-                opacity: 1;
-                transform: translateX(0);
-            }
-        }
-
-        .image-wrapper {
-            position: relative;
-            width: 350px;
-            height: 450px;
-            perspective: 1000px;
         }
 
         .image-container {
-            width: 100%;
-            height: 100%;
-            background: linear-gradient(135deg, var(--primary) 0%, var(--secondary) 100%);
-            border-radius: 20px;
-            padding: 8px;
             position: relative;
-            animation: rotateBox 6s ease-in-out infinite;
-            box-shadow: 0 20px 60px rgba(102, 126, 234, 0.4);
+            width: 300px;
+            height: 400px;
+            border-radius: 20px;
+            overflow: hidden;
+            box-shadow: 0 30px 60px rgba(0, 0, 0, 0.5);
         }
 
-        @keyframes rotateBox {
-            0%, 100% { transform: rotateY(0deg) rotateX(0deg); }
-            50% { transform: rotateY(5deg) rotateX(5deg); }
+        .image-glow {
+            position: absolute;
+            width: 200px;
+            height: 200px;
+            background: radial-gradient(circle, rgba(102, 126, 234, 0.3) 0%, transparent 70%);
+            border-radius: 50%;
+            top: -100px;
+            right: -100px;
+            animation: float 4s ease-in-out infinite;
+            z-index: 5;
         }
 
         .image-container img {
             width: 100%;
             height: 100%;
-            border-radius: 16px;
             object-fit: cover;
         }
 
-        .image-glow {
-            position: absolute;
-            top: -20px;
-            left: -20px;
-            right: -20px;
-            bottom: -20px;
-            background: linear-gradient(135deg, var(--primary), var(--secondary), var(--accent));
-            border-radius: 20px;
-            z-index: -1;
-            opacity: 0.5;
-            filter: blur(30px);
-            animation: glowPulse 3s ease-in-out infinite;
-        }
-
-        @keyframes glowPulse {
-            0%, 100% { opacity: 0.5; }
-            50% { opacity: 0.8; }
-        }
-
-        /* ===== SECTION STYLES ===== */
+        /* ===== PAGE SECTIONS ===== */
         .page-section {
             display: none;
             min-height: 100vh;
@@ -394,6 +331,205 @@
             background-clip: text;
         }
 
+        /* ===== SERVICES SECTION ===== */
+        .services-container {
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .services-intro {
+            text-align: center;
+            font-size: 1.2rem;
+            color: var(--text-light);
+            margin-bottom: 4rem;
+            max-width: 700px;
+            margin-left: auto;
+            margin-right: auto;
+            line-height: 1.8;
+        }
+
+        .services-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 2.5rem;
+            margin-bottom: 4rem;
+        }
+
+        .service-card {
+            background: rgba(255, 255, 255, 0.05);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            border-radius: 15px;
+            padding: 2.5rem;
+            backdrop-filter: blur(10px);
+            transition: all 0.4s ease;
+            animation: cardSlide 0.8s ease-out forwards;
+            opacity: 0;
+            display: flex;
+            flex-direction: column;
+            cursor: pointer;
+        }
+
+        .service-card:nth-child(1) { animation-delay: 0.1s; }
+        .service-card:nth-child(2) { animation-delay: 0.2s; }
+        .service-card:nth-child(3) { animation-delay: 0.3s; }
+        .service-card:nth-child(4) { animation-delay: 0.4s; }
+
+        @keyframes cardSlide {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .service-card:hover {
+            background: rgba(102, 126, 234, 0.15);
+            border-color: rgba(102, 126, 234, 0.5);
+            transform: translateY(-10px);
+            box-shadow: 0 20px 40px rgba(102, 126, 234, 0.2);
+        }
+
+        .service-icon {
+            font-size: 3rem;
+            margin-bottom: 1rem;
+            display: inline-block;
+        }
+
+        .service-card h3 {
+            font-size: 1.6rem;
+            margin-bottom: 1rem;
+            color: var(--primary);
+            font-weight: 700;
+        }
+
+        .service-card p {
+            color: var(--text-light);
+            line-height: 1.8;
+            margin-bottom: 1.5rem;
+            flex-grow: 1;
+        }
+
+        .service-features {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+        }
+
+        .service-features li {
+            color: var(--text-lighter);
+            padding-left: 1.5rem;
+            margin-bottom: 0.8rem;
+            position: relative;
+            line-height: 1.6;
+        }
+
+        .service-features li:before {
+            content: "✓";
+            position: absolute;
+            left: 0;
+            color: var(--accent);
+            font-weight: bold;
+        }
+
+        /* ===== INDIVIDUAL SERVICE PAGE ===== */
+        .service-detail {
+            max-width: 1100px;
+            margin: 0 auto;
+        }
+
+        .service-detail-header {
+            text-align: center;
+            margin-bottom: 4rem;
+        }
+
+        .service-detail-header .service-icon {
+            font-size: 4rem;
+            margin-bottom: 1.5rem;
+        }
+
+        .service-detail-header h2 {
+            font-size: 2.8rem;
+            margin-bottom: 1rem;
+            background: linear-gradient(135deg, var(--primary) 0%, var(--secondary) 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        .service-detail-header p {
+            font-size: 1.2rem;
+            color: var(--text-light);
+            max-width: 700px;
+            margin: 0 auto;
+            line-height: 1.8;
+        }
+
+        .service-detail-content {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 3rem;
+            margin-bottom: 4rem;
+        }
+
+        .service-detail-section h3 {
+            font-size: 1.8rem;
+            color: var(--primary);
+            margin-bottom: 1.5rem;
+        }
+
+        .service-detail-section p {
+            color: var(--text-light);
+            line-height: 1.8;
+            margin-bottom: 1.5rem;
+        }
+
+        .service-detail-section ul {
+            list-style: none;
+            padding: 0;
+            margin-bottom: 2rem;
+        }
+
+        .service-detail-section ul li {
+            color: var(--text-lighter);
+            padding-left: 2rem;
+            margin-bottom: 1rem;
+            position: relative;
+            line-height: 1.6;
+        }
+
+        .service-detail-section ul li:before {
+            content: "►";
+            position: absolute;
+            left: 0;
+            color: var(--accent);
+            font-weight: bold;
+        }
+
+        .service-detail-cta {
+            background: rgba(102, 126, 234, 0.1);
+            border: 2px solid rgba(102, 126, 234, 0.3);
+            border-radius: 15px;
+            padding: 3rem;
+            text-align: center;
+            margin: 4rem 0;
+        }
+
+        .service-detail-cta h3 {
+            font-size: 2rem;
+            margin-bottom: 1.5rem;
+        }
+
+        .service-detail-cta p {
+            font-size: 1.1rem;
+            color: var(--text-light);
+            margin-bottom: 2rem;
+            line-height: 1.8;
+        }
+
+        /* ===== EXPERIENCE GRID ===== */
         .experience-grid {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
@@ -418,17 +554,7 @@
         .experience-card:nth-child(3) { animation-delay: 0.3s; }
         .experience-card:nth-child(4) { animation-delay: 0.4s; }
         .experience-card:nth-child(5) { animation-delay: 0.5s; }
-
-        @keyframes cardSlide {
-            from {
-                opacity: 0;
-                transform: translateY(30px);
-            }
-            to {
-                opacity: 1;
-                transform: translateY(0);
-            }
-        }
+        .experience-card:nth-child(6) { animation-delay: 0.6s; }
 
         .experience-card:hover {
             background: rgba(102, 126, 234, 0.15);
@@ -459,6 +585,7 @@
         .experience-card p {
             color: var(--text-light);
             line-height: 1.6;
+            margin-bottom: 1rem;
         }
 
         .experience-card ul {
@@ -499,20 +626,25 @@
             display: flex;
             flex-wrap: wrap;
             gap: 1rem;
-            margin-top: 2rem;
+            margin-bottom: 2rem;
         }
 
         .skill-tag {
             background: rgba(102, 126, 234, 0.2);
             border: 1px solid rgba(102, 126, 234, 0.5);
             color: var(--primary);
-            padding: 0.6rem 1.3rem;
+            padding: 0.7rem 1.5rem;
             border-radius: 50px;
             font-size: 0.95rem;
-            font-weight: 500;
             transition: all 0.3s ease;
-            animation: fadeInUp 1s ease-out forwards;
+            animation: fadeInUp 0.8s ease-out forwards;
             opacity: 0;
+        }
+
+        .skill-tag:hover {
+            background: var(--primary);
+            color: #fff;
+            transform: translateY(-3px);
         }
 
         .skill-tag:nth-child(1) { animation-delay: 0.1s; }
@@ -524,24 +656,17 @@
         .skill-tag:nth-child(7) { animation-delay: 0.7s; }
         .skill-tag:nth-child(8) { animation-delay: 0.8s; }
 
-        .skill-tag:hover {
-            background: var(--primary);
-            color: #fff;
-            transform: translateY(-3px);
-            box-shadow: 0 8px 16px rgba(102, 126, 234, 0.3);
-        }
-
         /* ===== CONTACT SECTION ===== */
         .contact-wrapper {
-            max-width: 800px;
+            max-width: 900px;
             margin: 0 auto;
             text-align: center;
         }
 
         .contact-description {
-            font-size: 1.1rem;
+            font-size: 1.2rem;
             color: var(--text-light);
-            margin: 2rem 0;
+            margin-bottom: 3rem;
             line-height: 1.8;
         }
 
@@ -549,7 +674,7 @@
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
             gap: 2rem;
-            margin: 3rem 0;
+            margin-bottom: 3rem;
         }
 
         .contact-method {
@@ -557,6 +682,7 @@
             border: 1px solid rgba(255, 255, 255, 0.1);
             border-radius: 15px;
             padding: 2rem;
+            backdrop-filter: blur(10px);
             transition: all 0.3s ease;
             animation: cardSlide 0.8s ease-out forwards;
             opacity: 0;
@@ -569,102 +695,43 @@
         .contact-method:hover {
             background: rgba(102, 126, 234, 0.15);
             border-color: rgba(102, 126, 234, 0.5);
-            transform: translateY(-5px);
+            transform: translateY(-10px);
         }
 
         .contact-method h4 {
-            color: var(--primary);
+            font-size: 1.3rem;
             margin-bottom: 1rem;
+            color: var(--primary);
         }
 
         .contact-method a {
             color: var(--text-light);
             text-decoration: none;
-            transition: color 0.3s ease;
+            font-size: 1.1rem;
+            transition: all 0.3s ease;
         }
 
         .contact-method a:hover {
-            color: var(--primary);
+            color: var(--accent);
         }
 
         /* ===== FOOTER ===== */
         footer {
-            text-align: center;
-            padding: 2rem;
             background: rgba(15, 12, 41, 0.8);
+            backdrop-filter: blur(10px);
+            border-top: 1px solid rgba(102, 126, 234, 0.2);
+            padding: 2rem;
+            text-align: center;
             color: var(--text-lighter);
-            border-top: 1px solid rgba(255, 255, 255, 0.1);
+            font-size: 0.9rem;
         }
 
         /* ===== RESPONSIVE ===== */
         @media (max-width: 768px) {
             nav {
-                flex-direction: column;
-                gap: 1.5rem;
-                padding: 1rem;
-            }
-
-            .nav-links {
+                padding: 1rem 1.5rem;
                 flex-wrap: wrap;
                 gap: 1rem;
-                justify-content: center;
-                font-size: 0.9rem;
-            }
-
-            .hero {
-                flex-direction: column;
-                text-align: center;
-                padding: 6rem 1.5rem 3rem;
-            }
-
-            .hero h1 {
-                font-size: 2.5rem;
-            }
-
-            .hero h2 {
-                font-size: 1.3rem;
-            }
-
-            .image-wrapper {
-                width: 250px;
-                height: 350px;
-            }
-
-            .hero-buttons {
-                flex-direction: column;
-                align-items: center;
-            }
-
-            .contact-info {
-                flex-direction: column;
-            }
-
-            .section-title {
-                font-size: 2rem;
-            }
-
-            .experience-grid {
-                grid-template-columns: 1fr;
-            }
-
-            .page-section {
-                padding: 6rem 1.5rem 3rem;
-            }
-
-            .social-icons {
-                gap: 1rem;
-            }
-
-            .social-icons a {
-                width: 35px;
-                height: 35px;
-                font-size: 0.9rem;
-            }
-        }
-
-        @media (max-width: 480px) {
-            nav {
-                padding: 0.8rem;
             }
 
             .nav-brand {
@@ -672,35 +739,44 @@
             }
 
             .nav-links {
-                gap: 0.5rem;
-                font-size: 0.8rem;
+                gap: 1rem;
+                order: 3;
+                width: 100%;
+                font-size: 0.85rem;
+            }
+
+            .hero {
+                flex-direction: column;
+                padding: 6rem 1.5rem 1.5rem;
             }
 
             .hero h1 {
-                font-size: 2rem;
+                font-size: 2.5rem;
             }
 
-            .hero h2 {
+            .hero p {
                 font-size: 1rem;
             }
 
-            .hero-description {
-                font-size: 1rem;
-            }
-
-            .image-wrapper {
-                width: 200px;
-                height: 280px;
+            .page-section {
+                padding: 6rem 1.5rem 2rem;
             }
 
             .section-title {
-                font-size: 1.5rem;
-                margin-bottom: 2rem;
+                font-size: 2rem;
             }
 
-            .btn {
-                padding: 0.8rem 1.5rem;
-                font-size: 0.9rem;
+            .service-detail-content {
+                grid-template-columns: 1fr;
+            }
+
+            .services-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .image-container {
+                width: 200px;
+                height: 300px;
             }
         }
     </style>
@@ -708,11 +784,14 @@
 <body>
     <!-- NAVBAR -->
     <nav>
-        <div class="nav-brand" onclick="goHome()">KB</div>
+        <div class="nav-brand" onclick="goHome()">
+            Karan Balmiki
+            <span class="nav-brand-title">Digital Marketing & HR Expert</span>
+        </div>
         <ul class="nav-links">
             <li><a onclick="goHome()">Home</a></li>
+            <li><a onclick="showPage('services')">Services</a></li>
             <li><a onclick="showPage('resume')">Resume</a></li>
-            <li><a onclick="showPage('education')">Education</a></li>
             <li><a onclick="showPage('about')">About</a></li>
             <li><a onclick="showPage('contact')">Contact</a></li>
         </ul>
@@ -723,50 +802,265 @@
         </div>
     </nav>
 
-    <!-- HOME PAGE -->
+    <!-- HOME PAGE (HERO) -->
     <section class="page-section active" id="home-page">
         <div class="hero">
             <div class="hero-content">
-                <h1>Karan Balmiki</h1>
-                <h2>Digital Marketing Executive & HR Specialist</h2>
-                <p class="hero-description">
-                    Passionate about creating digital solutions, managing HR operations, and driving business growth through strategic marketing and team collaboration. Currently working at AUMHRSolutions with expertise in recruitment, content creation, and digital promotion.
-                </p>
+                <h1>Strategic Digital Growth & Human Capital Expert</h1>
+                <p>Helping businesses scale through high-impact digital marketing, professional content creation, and global recruitment strategies.</p>
                 <div class="hero-buttons">
-                    <a href="#contact-page" class="btn btn-primary" onclick="showPage('contact')">Get In Touch</a>
-                    <a href="#resume-page" class="btn btn-secondary" onclick="showPage('resume')">View Resume</a>
-                </div>
-                <div class="contact-info">
-                    <div class="contact-item">
-                        <div class="contact-item-icon">📧</div>
-                        <div class="contact-item-text">
-                            <small>Email</small>
-                            <p>karantejprakashbalmiki@gmail.com</p>
-                        </div>
-                    </div>
-                    <div class="contact-item">
-                        <div class="contact-item-icon">📍</div>
-                        <div class="contact-item-text">
-                            <small>Location</small>
-                            <p>Grant Road West, Mumbai 400026</p>
-                        </div>
-                    </div>
+                    <button class="btn btn-primary" onclick="showPage('services')">View Services</button>
+                    <button class="btn btn-secondary" onclick="showPage('about')">Learn More</button>
                 </div>
             </div>
-            <div class="hero-image">
-                <div class="image-wrapper">
-                    <div class="image-glow"></div>
-                    <div class="image-container">
-                        <img src="https://via.placeholder.com/350x450/667eea/fff?text=Karan+Balmiki" alt="Karan Profile">
-                    </div>
+            <div class="image-wrapper">
+                <div class="image-glow"></div>
+                <div class="image-container">
+                    <img src="https://via.placeholder.com/350x450/667eea/fff?text=Karan+Balmiki" alt="Karan Profile">
                 </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- SERVICES PAGE (OVERVIEW) -->
+    <section class="page-section" id="services-page">
+        <div class="services-container">
+            <h2 class="section-title">Services I Offer</h2>
+            <p class="services-intro">
+                I provide comprehensive solutions tailored to help businesses and organizations grow. From building your digital presence to acquiring top talent, I deliver results-driven strategies backed by expertise and industry recognition.
+            </p>
+
+            <div class="services-grid">
+                <div class="service-card" onclick="showPage('digital-marketing')">
+                    <div class="service-icon">📱</div>
+                    <h3>Full-Scale Digital Marketing</h3>
+                    <p>End-to-end management of LinkedIn, Instagram, and Facebook. I build your brand authority and drive measurable engagement.</p>
+                    <ul class="service-features">
+                        <li>Multi-platform content strategy</li>
+                        <li>Social media management</li>
+                        <li>Campaign execution</li>
+                        <li>Analytics & tracking</li>
+                    </ul>
+                </div>
+
+                <div class="service-card" onclick="showPage('content-design')">
+                    <div class="service-icon">🎨</div>
+                    <h3>Creative Content Design</h3>
+                    <p>High-conversion marketing materials using Adobe Photoshop, Canva, and AI-driven tools for ads and social media.</p>
+                    <ul class="service-features">
+                        <li>Adobe Photoshop design</li>
+                        <li>Canva & design tools</li>
+                        <li>AI-powered creativity</li>
+                        <li>Brand-consistent visuals</li>
+                    </ul>
+                </div>
+
+                <div class="service-card" onclick="showPage('talent-acquisition')">
+                    <div class="service-icon">🌍</div>
+                    <h3>Global Talent Acquisition</h3>
+                    <p>Specialized recruitment for Oil & Gas and Gulf-based industries. I source, screen, and manage the entire hiring pipeline.</p>
+                    <ul class="service-features">
+                        <li>Sourcing & screening</li>
+                        <li>International expertise</li>
+                        <li>ATS technology</li>
+                        <li>End-to-end hiring</li>
+                    </ul>
+                </div>
+
+                <div class="service-card" onclick="showPage('brand-strategy')">
+                    <div class="service-icon">🚀</div>
+                    <h3>Brand Strategy & SEO</h3>
+                    <p>Developing long-term strategies to increase search visibility and user engagement. Data-driven approaches for sustainable growth.</p>
+                    <ul class="service-features">
+                        <li>Brand strategy</li>
+                        <li>SEO optimization</li>
+                        <li>Search visibility</li>
+                        <li>Engagement strategies</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- DIGITAL MARKETING SERVICE PAGE -->
+    <section class="page-section" id="digital-marketing-page">
+        <div class="service-detail">
+            <div class="service-detail-header">
+                <div class="service-icon">📱</div>
+                <h2>Full-Scale Digital Marketing</h2>
+                <p>End-to-end management of LinkedIn, Instagram, and Facebook platforms to build brand authority and drive measurable engagement.</p>
+            </div>
+
+            <div class="service-detail-content">
+                <div class="service-detail-section">
+                    <h3>What I Deliver</h3>
+                    <p>I don't just "post"—I build a complete digital presence strategy tailored to your business goals.</p>
+                    <ul>
+                        <li>Multi-platform content strategy aligned with business objectives</li>
+                        <li>Professional content creation and scheduling across 4+ platforms</li>
+                        <li>Campaign planning, execution, and real-time optimization</li>
+                        <li>Analytics tracking and monthly performance reports</li>
+                        <li>Community management and audience engagement</li>
+                        <li>Automated social media workflows for consistency</li>
+                    </ul>
+                </div>
+                <div class="service-detail-section">
+                    <h3>Key Benefits</h3>
+                    <p>Maximize your digital reach with data-driven strategies.</p>
+                    <ul>
+                        <li>100% brand consistency across all platforms</li>
+                        <li>Increased organic reach and follower growth</li>
+                        <li>Higher engagement rates through targeted content</li>
+                        <li>Reduced time managing social platforms</li>
+                        <li>Cost-effective content scheduling and automation</li>
+                        <li>Professional analytics and performance insights</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="service-detail-cta">
+                <h3>Ready to Scale Your Digital Presence?</h3>
+                <p>Let's create a strategic content plan that drives real results for your business.</p>
+                <button class="btn btn-primary" onclick="showPage('contact')">Get Started</button>
+            </div>
+        </div>
+    </section>
+
+    <!-- CONTENT DESIGN SERVICE PAGE -->
+    <section class="page-section" id="content-design-page">
+        <div class="service-detail">
+            <div class="service-detail-header">
+                <div class="service-icon">🎨</div>
+                <h2>Creative Content Design</h2>
+                <p>High-conversion marketing materials using Adobe Photoshop, Canva, and AI-driven tools for ads and social media.</p>
+            </div>
+
+            <div class="service-detail-content">
+                <div class="service-detail-section">
+                    <h3>What I Deliver</h3>
+                    <p>Professional, conversion-focused visual content that captures attention and drives action.</p>
+                    <ul>
+                        <li>Custom Adobe Photoshop designs tailored to your brand</li>
+                        <li>Canva-based templates for consistent visual identity</li>
+                        <li>AI-powered creative optimization for social media ads</li>
+                        <li>Eye-catching banner designs and promotional graphics</li>
+                        <li>Reels, carousel posts, and video thumbnails</li>
+                        <li>Brand-consistent visual guidelines and asset libraries</li>
+                    </ul>
+                </div>
+                <div class="service-detail-section">
+                    <h3>Key Benefits</h3>
+                    <p>Stand out with professional visuals that reflect your brand.</p>
+                    <ul>
+                        <li>Professional-grade designs without expensive agencies</li>
+                        <li>Faster turnaround times for marketing campaigns</li>
+                        <li>Improved conversion rates with optimized visuals</li>
+                        <li>Consistent brand identity across all materials</li>
+                        <li>Access to both traditional and AI-driven design tools</li>
+                        <li>Unlimited design revisions until you're satisfied</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="service-detail-cta">
+                <h3>Transform Your Visual Presence</h3>
+                <p>Let's create stunning designs that make your brand unforgettable.</p>
+                <button class="btn btn-primary" onclick="showPage('contact')">Get Started</button>
+            </div>
+        </div>
+    </section>
+
+    <!-- TALENT ACQUISITION SERVICE PAGE -->
+    <section class="page-section" id="talent-acquisition-page">
+        <div class="service-detail">
+            <div class="service-detail-header">
+                <div class="service-icon">🌍</div>
+                <h2>Global Talent Acquisition</h2>
+                <p>Specialized recruitment for Oil & Gas and Gulf-based industries. I source, screen, and manage the entire hiring pipeline with proven international expertise.</p>
+            </div>
+
+            <div class="service-detail-content">
+                <div class="service-detail-section">
+                    <h3>What I Deliver</h3>
+                    <p>Complete end-to-end recruitment solutions with international expertise.</p>
+                    <ul>
+                        <li>Targeted candidate sourcing and screening for specialized roles</li>
+                        <li>Expertise in Oil & Gas, Qatar, UAE, and Saudi Arabia markets</li>
+                        <li>ATS and Zoho Recruit platform optimization</li>
+                        <li>Government portal navigation and compliance management</li>
+                        <li>Candidate interview coordination and feedback compilation</li>
+                        <li>International deployment and onboarding support</li>
+                    </ul>
+                </div>
+                <div class="service-detail-section">
+                    <h3>Key Benefits</h3>
+                    <p>Find the right talent faster with proven recruitment expertise.</p>
+                    <ul>
+                        <li>20%+ increase in candidate engagement rates</li>
+                        <li>Faster hiring timelines and reduced cost per hire</li>
+                        <li>Access to specialized talent pools in international markets</li>
+                        <li>Streamlined recruitment processes using modern ATS tools</li>
+                        <li>Compliance with international hiring regulations</li>
+                        <li>Reduced time-to-hire and improved candidate quality</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="service-detail-cta">
+                <h3>Build Your Dream Team Globally</h3>
+                <p>Let's find and acquire the top talent your organization needs.</p>
+                <button class="btn btn-primary" onclick="showPage('contact')">Get Started</button>
+            </div>
+        </div>
+    </section>
+
+    <!-- BRAND STRATEGY SERVICE PAGE -->
+    <section class="page-section" id="brand-strategy-page">
+        <div class="service-detail">
+            <div class="service-detail-header">
+                <div class="service-icon">🚀</div>
+                <h2>Brand Strategy & SEO</h2>
+                <p>Developing long-term strategies to increase search visibility and user engagement. Data-driven approaches that position your brand for sustainable growth.</p>
+            </div>
+
+            <div class="service-detail-content">
+                <div class="service-detail-section">
+                    <h3>What I Deliver</h3>
+                    <p>Strategic positioning and optimization for long-term brand success.</p>
+                    <ul>
+                        <li>Comprehensive brand strategy and positioning framework</li>
+                        <li>SEO audit and competitive analysis</li>
+                        <li>Keyword research and search optimization strategy</li>
+                        <li>Content strategy aligned with SEO best practices</li>
+                        <li>User engagement and conversion optimization</li>
+                        <li>Monthly reporting and strategy adjustments</li>
+                    </ul>
+                </div>
+                <div class="service-detail-section">
+                    <h3>Key Benefits</h3>
+                    <p>Achieve sustainable growth through strategic positioning.</p>
+                    <ul>
+                        <li>Increased organic search visibility and rankings</li>
+                        <li>20%+ improvement in user engagement metrics</li>
+                        <li>Higher quality leads and customer acquisition</li>
+                        <li>Long-term sustainable growth strategy</li>
+                        <li>Competitive advantage in your market</li>
+                        <li>Data-driven decision making with clear ROI tracking</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="service-detail-cta">
+                <h3>Elevate Your Brand Strategy</h3>
+                <p>Let's build a sustainable growth strategy that sets you apart from competitors.</p>
+                <button class="btn btn-primary" onclick="showPage('contact')">Get Started</button>
             </div>
         </div>
     </section>
 
     <!-- RESUME PAGE -->
     <section class="page-section" id="resume-page">
-        <h2 class="section-title">My Resume</h2>
+        <h2 class="section-title">Professional Experience</h2>
         <div class="experience-grid" style="max-width: 1100px; margin: 0 auto;">
             <div class="experience-card">
                 <h3>AUMHRSolutions</h3>
@@ -776,107 +1070,38 @@
                 <ul>
                     <li>Planned, created, and scheduled content across LinkedIn, Instagram, Facebook, and WhatsApp platforms</li>
                     <li>Executed digital promotions for overseas recruitment campaigns and job vacancies</li>
-                    <li>Managed daily social media posts, reels, stories, and recruitment creatives</li>
-                    <li>Designed marketing and recruitment creatives using Adobe Photoshop, Canva, CorelDRAW, and AI-based tools</li>
+                    <li>Designed high-impact recruitment creatives and promotional graphics using Adobe Photoshop and Canva</li>
+                    <li>Managed social media analytics and performance tracking with monthly reports</li>
+                    <li>Implemented social media automation for 100% brand consistency</li>
                 </ul>
             </div>
 
             <div class="experience-card">
                 <h3>Ambe International</h3>
-                <p class="position">Recruiter</p>
+                <p class="position">Recruitment Specialist</p>
                 <p class="duration">August 2024 – July 2024</p>
-                <p><strong>Key Responsibilities:</strong></p>
+                <p><strong>Global Recruitment & Candidate Management:</strong></p>
                 <ul>
-                    <li>Hiring for various positions in oil and gas industry across Gulf countries</li>
-                    <li>Utilized Zoho Recruit to manage end-to-end recruitment processes</li>
-                    <li>Managing social media campaigns with 20% increase in user engagement</li>
-                    <li>Sourcing CVs from Naukri, Monster, and social media platforms</li>
-                    <li>Coordinating interviews across multiple locations</li>
-                    <li>Uploading candidate documents to Qatar, UAE, and Saudi government portals</li>
+                    <li>Managed end-to-end recruitment for Oil & Gas positions across Qatar, UAE, and Saudi Arabia</li>
+                    <li>Leveraged Zoho Recruit and government portals for streamlined candidate processing</li>
+                    <li>Conducted candidate interviews and coordinated international deployment</li>
+                    <li>Increased candidate engagement by 20% through targeted social media campaigns</li>
+                    <li>Maintained compliance with international hiring regulations</li>
                 </ul>
             </div>
 
             <div class="experience-card">
                 <h3>Mac Décor</h3>
-                <p class="position">Supervisor</p>
+                <p class="position">Operations Supervisor (Project: Jio World Centre)</p>
                 <p class="duration">February 2022 – August 2022</p>
-                <p><strong>Key Achievements:</strong></p>
+                <p><strong>On-Site Operations & Project Management:</strong></p>
                 <ul>
-                    <li>Overseeing daily on-site activities at Jio World Centre, BKC</li>
-                    <li>Managed labour supervision during COVID-19 pandemic</li>
-                    <li>Monitored daily progress and prepared detailed work reports</li>
-                    <li>Supervised painting and tiling work in high-priority areas</li>
-                    <li>Recognized in 75+ news articles including Business Standard</li>
+                    <li>Supervised critical operations at the prestigious Jio World Centre, BKC, Mumbai</li>
+                    <li>Provided daily technical progress reports to stakeholders ensuring 100% timeline adherence</li>
+                    <li>Coordinated with cross-functional teams for seamless project execution</li>
+                    <li>Recognized in 75+ news articles for excellence in project coordination</li>
+                    <li>Managed vendor relationships and on-site resource optimization</li>
                 </ul>
-            </div>
-        </div>
-    </section>
-
-    <!-- EDUCATION PAGE -->
-    <section class="page-section" id="education-page">
-        <h2 class="section-title">Education & Certifications</h2>
-        <div class="experience-grid" style="max-width: 1100px; margin: 0 auto;">
-            <div class="experience-card">
-                <h3>Mumbai University</h3>
-                <p class="position">BMS (Bachelor of Management Studies) - Marketing</p>
-                <p class="duration">Passing Year: April 2024</p>
-                <p>Completed undergraduate degree with focus on marketing management, business strategies, and organizational management. Developed expertise in digital marketing trends and business analysis.</p>
-            </div>
-
-            <div class="experience-card">
-                <h3>Maharashtra Board</h3>
-                <p class="position">HSC (Higher Secondary Certificate)</p>
-                <p class="duration">Passing Year: August 2021</p>
-                <p>Completed higher secondary education with strong foundation in academics and extracurricular activities.</p>
-            </div>
-
-            <div class="experience-card">
-                <h3>Maharashtra Board</h3>
-                <p class="position">SSC (Secondary School Certificate)</p>
-                <p class="duration">Passing Year: March 2019</p>
-                <p>Completed secondary school education with focus on overall development and academic excellence.</p>
-            </div>
-
-            <div class="experience-card">
-                <h3>Great Learning Academy</h3>
-                <p class="position">Human Resource Management Certification</p>
-                <p class="duration">Completed: April 2024</p>
-                <p>Professional certification in HR management covering recruitment, employee relations, payroll, and organizational development strategies.</p>
-            </div>
-
-            <div class="experience-card">
-                <h3>Management & Strategy Institute, U.S.A</h3>
-                <p class="position">AI Prompting Essential Certification</p>
-                <p class="duration">Completed: August 2021</p>
-                <p>International accredited certification in AI prompting and artificial intelligence fundamentals. Internationally recognized by CSSC.</p>
-            </div>
-
-            <div class="experience-card">
-                <h3>Management & Strategy Institute, U.S.A</h3>
-                <p class="position">Six Sigma Yellow Belt Certification</p>
-                <p class="duration">Completed: Mar 2019</p>
-                <p>International accredited certification in Six Sigma methodologies for process improvement and quality management.</p>
-            </div>
-
-            <div class="experience-card">
-                <h3>Management & Strategy Institute, U.S.A</h3>
-                <p class="position">Business Management Essentials Certified</p>
-                <p class="duration">Completed</p>
-                <p>Comprehensive certification covering business management principles, strategic planning, and organizational leadership.</p>
-            </div>
-
-            <div class="experience-card">
-                <h3>Management & Strategy Institute, U.S.A</h3>
-                <p class="position">Project Management Essentials Certified</p>
-                <p class="duration">Completed</p>
-                <p>Professional certification in project management covering planning, execution, monitoring, and project closure.</p>
-            </div>
-
-            <div class="experience-card">
-                <h3>Digital Adda & VMEDU</h3>
-                <p class="position">Six Sigma White Belt</p>
-                <p class="duration">Completed</p>
-                <p>Certification in Six Sigma fundamentals focusing on lean principles and continuous improvement methodologies.</p>
             </div>
         </div>
     </section>
@@ -1010,15 +1235,6 @@
             const rotationY = (mouseX - 0.5) * 10;
             
             heroImage.style.transform = `perspective(1000px) rotateX(${rotationX}deg) rotateY(${rotationY}deg)`;
-        });
-
-        // ===== SCROLL ANIMATION FOR HERO =====
-        window.addEventListener('scroll', () => {
-            const scrolled = window.pageYOffset;
-            const parallax = document.querySelector('.hero-image');
-            if (parallax && document.querySelector('#home-page').classList.contains('active')) {
-                parallax.style.transform = `translateY(${scrolled * 0.5}px)`;
-            }
         });
     </script>
 </body>
